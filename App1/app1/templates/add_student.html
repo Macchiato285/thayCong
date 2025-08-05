@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm sinh viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f0f2f5;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Thêm Sinh Viên</h2>
+    <form id="student-form">
+        <label for="student_id">Mã sinh viên:</label>
+        <input type="text" id="student_id" name="student_id" required>
+
+        <label for="full_name">Họ và tên:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="class_id">Mã lớp:</label>
+        <input type="text" id="class_id" name="class_id" required>
+
+        <button type="submit">Thêm sinh viên</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById("student-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const student = {
+                student_id: document.getElementById("student_id").value,
+                full_name: document.getElementById("full_name").value,
+                class_id: document.getElementById("class_id").value
+            };
+
+            fetch("/add-student", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(student)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const msg = document.getElementById("message");
+                if (data.message) {
+                    msg.innerHTML = "<span style='color:green'>" + data.message + "</span>";
+                } else {
+                    msg.innerHTML = "<span style='color:red'>" + data.error + "</span>";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
