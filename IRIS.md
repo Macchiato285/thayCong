@@ -10,8 +10,6 @@
 
 Ứng dụng được xây dựng bằng **Streamlit** để hiển thị trực quan và dễ sử dụng.  
 Thuật toán được sử dụng: **K-Nearest Neighbors (KNN)**.  
-![Uploading image.png…]()
-
 ---
 
 ## ⚙️ Công nghệ sử dụng
@@ -30,5 +28,7 @@ Thuật toán được sử dụng: **K-Nearest Neighbors (KNN)**.
 - Kết quả dự đoán loài hoa hiển thị ngay trên giao diện  
 
 ---
+<img width="1801" height="929" alt="image" src="https://github.com/user-attachments/assets/fc376e83-d6b1-4fa4-875a-26a6f1e99518" />
+
 
 
