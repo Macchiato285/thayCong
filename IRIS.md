@@ -29,9 +29,3 @@ Thuật toán được sử dụng: **K-Nearest Neighbors (KNN)**.
 - Kết quả dự đoán loài hoa hiển thị ngay trên giao diện  
 
 ---
-
-## 🖥 Cách chạy
-1. Clone project về máy:
-   ```bash
-   git clone https://github.com/<your-username>/iris-knn-web.git
-   cd iris-knn-web
