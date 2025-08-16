@@ -10,6 +10,7 @@
 
 Ứng dụng được xây dựng bằng **Streamlit** để hiển thị trực quan và dễ sử dụng.  
 Thuật toán được sử dụng: **K-Nearest Neighbors (KNN)**.  
+![Uploading image.png…]()
 
 ---
 
